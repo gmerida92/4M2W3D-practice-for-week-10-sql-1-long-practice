@@ -8,3 +8,4 @@ CREATE TABLE customers (
     reward_points INTEGER NOT NULL DEFAULT 5,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
