@@ -59,7 +59,7 @@ VALUES(false),
       (false),
       (false);
 
-SELECT reward_points from customers WHERE name = 'Rachel';
+-- SELECT reward_points from customers WHERE name = 'Rachel';
 
 INSERT INTO coffee_orders (is_redeemed)
 VALUES(true);
@@ -81,4 +81,73 @@ VALUES(false),
       (false),
       (false);
 
-SELECT reward_points from customers WHERE name = 'Ross';
+-- SELECT id from coffee_orders;
+
+-- SELECT reward_points from customers WHERE name = 'Ross';
+
+UPDATE customers
+SET reward_points = (SELECT sum(reward_points + 3) FROM customers WHERE name = 'Monica')
+WHERE name = 'Monica';
+
+INSERT INTO coffee_orders (is_redeemed)
+VALUES(false),
+      (false),
+      (false);
+
+-- SELECT reward_points FROM customers WHERE  name = "Phoebe";
+
+INSERT INTO coffee_orders (is_redeemed)
+VALUES(false);
+
+DELETE FROM coffee_orders WHERE id = 18 OR id = 19;
+
+-- SELECT * from coffee_orders;
+
+UPDATE customers
+SET reward_points = (SELECT sum(reward_points + (-2)) FROM customers WHERE name = 'Ross')
+WHERE name = 'Ross';
+
+-- SELECT reward_points from customers WHERE name = 'Ross';
+
+UPDATE customers
+SET reward_points = (SELECT sum(reward_points + (2)) FROM customers WHERE name = 'Joey')
+WHERE name = 'Joey';
+
+INSERT INTO coffee_orders (is_redeemed)
+VALUES
+    (false),
+    (false);
+
+-- SELECT reward_points From customers where name = "Monica";
+
+INSERT INTO coffee_orders (is_redeemed)
+VALUES (true);
+
+DELETE FROM customers WHERE name = "Chandler";
+
+-- SELECT * From customers;
+
+-- SELECT reward_points FROM customers WHERE  name = "Ross";
+
+UPDATE customers
+SET reward_points = (SELECT sum(reward_points + (1)) FROM customers WHERE name = 'Ross')
+WHERE name = 'Ross';
+
+INSERT INTO coffee_orders (is_redeemed)
+VALUES (false);
+
+-- SELECT reward_points FROM  customers WHERE name = "Joey";
+
+UPDATE customers
+SET reward_points = (SELECT sum(reward_points + (1)) FROM customers WHERE name = 'Joey')
+WHERE name = 'Joey';
+
+INSERT INTO coffee_orders (is_redeemed)
+VALUES (false);
+
+UPDATE customers
+SET email = "p_as_in_phoebe@friends.show"
+WHERE name = "Phoebe";
+
+SELECT * FROM customers;
+SELECT * FROM coffee_orders;
